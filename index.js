@@ -4,7 +4,25 @@ import inquirer from 'inquirer';
 import { createSpinner } from 'nanospinner';
 import { exec } from 'child_process';
 
-console.log(chalk.cyan('\nCreate Discord Bot'));
+console.log(
+    chalk.green(`   
+    
+    
+
+      db      \`7MMF'\`7MMM.     ,MMF' .g8"""bgd   .g8""8q. \`7MN.   \`7MF'
+     ;MM:       MM    MMMb    dPMM .dP'     \`M .dP'    \`YM. MMN.    M  
+    ,V^MM.      MM    M YM   ,M MM dM'       \` dM'      \`MM M YMb   M  
+   ,M  \`MM      MM    M  Mb  M' MM MM          MM        MM M  \`MN. M  
+   AbmmmqMA     MM    M  YM.P'  MM MM.         MM.      ,MP M   \`MM.M  
+  A'     VML    MM    M  \`YM'   MM \`Mb.     ,' \`Mb.    ,dP' M     YMM  
+.AMA.   .AMMA..JMML..JML. \`'  .JMML. \`"bmmmd'    \`"bmmd"' .JML.    YM 
+
+
+
+`)
+);
+
+console.log(chalk.green('\nCreate Script\n'));
 
 let { script_name } = await inquirer.prompt([
     {
@@ -30,7 +48,7 @@ await exec(
         console.log(
             `\n${chalk.green(
                 'Script created'
-            )}\n\nStart developing your script:\ncd ${project_name
+            )}\n\nStart developing your script:\ncd ${script_name
                 .toLowerCase()
                 .replaceAll(' ', '-')}\n\nGood Luck! 🍀`
         );

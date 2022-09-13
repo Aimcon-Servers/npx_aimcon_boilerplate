@@ -1,5 +1,5 @@
 {
-    "name": "npx_aimcon_boilerplate",
+    "name": "aimcon_boilerplate",
     "version": "1.0.0",
     "description": "Create a new lua fivem script with the \"aimcon_boilerplate\" (https://github.com/Aimcon-Servers/aimcon_boilerplate)",
     "main": "index.js",
