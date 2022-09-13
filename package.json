@@ -1,0 +1,22 @@
+{
+    "name": "npx_aimcon_boilerplate",
+    "version": "1.0.0",
+    "description": "Create a new lua fivem script with the \"aimcon_boilerplate\" (https://github.com/Aimcon-Servers/aimcon_boilerplate)",
+    "main": "index.js",
+    "bin": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Aimcon <aimconservers@gmail.com>",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Aimcon-Servers/npx_aimcon_boilerplate.git"
+    },
+    "dependencies": {
+        "chalk": "^5.0.1",
+        "inquirer": "^9.0.0",
+        "nanospinner": "^1.1.0"
+    }
+}
