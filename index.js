@@ -3,9 +3,10 @@ import chalk from 'chalk';
 import inquirer from 'inquirer';
 import { createSpinner } from 'nanospinner';
 import { exec } from 'child_process';
+import fs from 'fs';
 
 console.log(
-    chalk.green(`   
+  chalk.green(`   
     
     
 
@@ -25,32 +26,32 @@ console.log(
 console.log(chalk.green('\nCreate Script\n'));
 
 let { script_name } = await inquirer.prompt([
-    {
-        name: 'script_name',
-        type: 'input',
-        message: 'Script name:',
-    },
+  {
+    name: 'script_name',
+    type: 'input',
+    message: 'Script name:',
+  },
 ]);
 
 let spinner = createSpinner(
-    'Cloning repository (https://github.com/Aimcon-Servers/aimcon_boilerplate)'
+  'Cloning repository (https://github.com/Aimcon-Servers/aimcon_boilerplate)'
 ).start();
 
-await exec(
-    `git clone https://github.com/Aimcon-Servers/aimcon_boilerplate ${script_name
-        .toLowerCase()
-        .replaceAll(' ', '-')}`,
-    async () => {
-        spinner.success(
-            'Repository Cloned (https://github.com/Aimcon-Servers/aimcon_boilerplate)'
-        );
+const dirname = script_name.toLowerCase().replaceAll(' ', '-');
 
-        console.log(
-            `\n${chalk.green(
-                'Script created'
-            )}\n\nStart developing your script:\ncd ${script_name
-                .toLowerCase()
-                .replaceAll(' ', '-')}\n\nGood Luck! 🍀`
-        );
-    }
+await exec(
+  `git clone https://github.com/Aimcon-Servers/aimcon_boilerplate ${dirname}`,
+  async () => {
+    spinner.success(
+      'Repository Cloned (https://github.com/Aimcon-Servers/aimcon_boilerplate)'
+    );
+    fs.rmSync(`${dirname}/.git`, { recursive: true, force: true });
+    console.log(
+      `\n${chalk.green(
+        'Script created'
+      )}\n\nStart developing your script:\ncd ${script_name
+        .toLowerCase()
+        .replaceAll(' ', '-')}\n\nGood Luck! 🍀`
+    );
+  }
 );
