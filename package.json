@@ -1,6 +1,6 @@
 {
   "name": "aimcon_boilerplate",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Create a new lua fivem script with the \"aimcon_boilerplate\" (https://github.com/Aimcon-Servers/aimcon_boilerplate)",
   "main": "index.js",
   "bin": "index.js",

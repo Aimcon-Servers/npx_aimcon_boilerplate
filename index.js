@@ -37,21 +37,22 @@ let spinner = createSpinner(
   'Cloning repository (https://github.com/Aimcon-Servers/aimcon_boilerplate)'
 ).start();
 
-const dirname = script_name.toLowerCase().replaceAll(' ', '-');
+const script_name_formatted = script_name.toLowerCase().replaceAll(' ', '-');
 
 await exec(
-  `git clone https://github.com/Aimcon-Servers/aimcon_boilerplate ${dirname}`,
+  `git clone https://github.com/Aimcon-Servers/aimcon_boilerplate ${script_name_formatted}`,
   async () => {
     spinner.success(
       'Repository Cloned (https://github.com/Aimcon-Servers/aimcon_boilerplate)'
     );
-    fs.rmSync(`${dirname}/.git`, { recursive: true, force: true });
+    fs.rmSync(`${process.cwd()}/${script_name_formatted}/.git`, {
+      recursive: true,
+      force: true,
+    });
     console.log(
       `\n${chalk.green(
         'Script created'
-      )}\n\nStart developing your script:\ncd ${script_name
-        .toLowerCase()
-        .replaceAll(' ', '-')}\n\nGood Luck! 🍀`
+      )}\n\nStart developing your script:\ncd ${script_name_formatted}\n\nGood Luck! 🍀`
     );
   }
 );
